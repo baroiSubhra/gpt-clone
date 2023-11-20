@@ -16,9 +16,10 @@ export default function Main() {
     const fetchHistoryItems = async () => {
         const response = await getChatHistoryBasedOnId(pathId);
         const status = response.success
-        const data = response.response.data.data
-        if (status && data.conversations.length > 0) {
-            setConversation([...conversation, ...data.conversations])
+        if (status) {
+            const data = response.response.data.data
+            if (data.conversations.length > 0)
+                setConversation([...conversation, ...data.conversations])
             setDetails(data)
         }
     }
