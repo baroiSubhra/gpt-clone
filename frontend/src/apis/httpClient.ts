@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getBaseUrl = () => {
-    return 'http://localhost:3002'
+    return process.env.NEXT_PUBLIC_API_ENDPOINT
 };
 
 let config = {

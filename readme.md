@@ -12,23 +12,25 @@ A Sample Java Fullstack Project
 </aside>
 
 - Navigate to directory
-    
-    ```bash
-    cd backnend
-    ```
-    
+  ```bash
+  cd backnend
+  ```
 - Install dependencies
-    
-    ```bash
-    npm install
-    ```
-    
+
+  ```bash
+  npm install
+  ```
+
+- Rename sample.env to .env
+
+  ```bash
+  rename sample.env to .env
+  ```
+
 - Run project locally
-    
-    ```bash
-    npm run dev
-    ```
-    
+  ```bash
+  npm run dev
+  ```
 
 ### Frontend
 
@@ -38,19 +40,22 @@ A Sample Java Fullstack Project
 </aside>
 
 - Navigate to directory
-    
-    ```bash
-    cd frontnend
-    ```
-    
+  ```bash
+  cd frontnend
+  ```
 - Install dependencies
-    
-    ```bash
-    npm install
-    ```
-    
+
+  ```bash
+  npm install
+  ```
+
+  - Rename sample.env to .env
+
+  ```bash
+  rename sample.env to .env
+  ```
+
 - Run project locally
-    
-    ```bash
-    npm run dev
-    ```
+  ```bash
+  npm run dev
+  ```
