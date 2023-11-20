@@ -1,0 +1,378 @@
+:root {
+  --sidebar-bg: #d9dbe0;
+  --chat-area-bg: white;
+  --text-color: black;
+  --button-bg: white;
+  --button-txt-color: black;
+  --input-bg: white;
+  --input-color: black;
+  --secondary-color: #cccdd1;
+  --secondary-color-dark: #cbcdd4;
+}
+
+body:has(.dark-theme) {
+  --sidebar-bg: black;
+  --chat-area-bg: #343541;
+  --text-color: white;
+  --button-bg: #15141b;
+  --button-txt-color: white;
+  --input-bg: #343541;
+  --input-color: white;
+  --secondary-color: #6b7280;
+  --secondary-color-dark: rgba(255, 255, 255, 0.2);
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: var(--text-color);
+}
+
+.sideMenu {
+  width: 260px;
+  padding: 24px 12px;
+  background-color: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.sideMenuContent {
+  flex: 1;
+}
+.mainArea {
+  flex: 1;
+  padding: 8px;
+  background-color: var(--chat-area-bg);
+}
+
+.chatSection {
+  flex: 1;
+  padding: 8px;
+  padding-top: 24px;
+  background-color: var(--chat-area-bg);
+}
+
+.chatArea {
+  padding: 24px 48px;
+  height: 95%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ChatContainer {
+  flex: 1;
+  padding: 12px;
+  overflow-y: scroll;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.inputBox {
+  flex: 1;
+}
+
+.shareButton {
+  margin-left: 8px;
+}
+
+.viewSelector {
+  font-size: 1.2rem;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.topNav {
+  font-size: 1rem;
+  padding: 8px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.topNavActive {
+  background-color: var(--secondary-color-dark);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 20px;
+  gap: 8px;
+  background: var(--button-bg);
+  border: none;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  color: var(--button-txt-color);
+  transition: ease 0.2s all;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-disabled {
+  cursor: not-allowed;
+}
+
+.input-wraper {
+  position: relative;
+}
+
+.input-icon-holder {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-right: 0.75rem;
+  align-items: center;
+  pointer-events: none;
+}
+
+.input-icon {
+  color: var(--input-color);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.input-modifer {
+  display: block;
+  padding: 0.625rem;
+  padding-left: 0.725rem;
+  background-color: var(--input-bg);
+  color: var(--input-color);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--secondary-color);
+}
+
+.input-modifer:focus {
+  outline: none;
+  background-color: var(--input-bg);
+  color: var(--input-color);
+}
+
+.input-modifer:not(:placeholder-shown) {
+  background-color: var(--input-bg);
+}
+
+.input-modifer:autofill,
+.input-modifer:-webkit-autofill {
+  appearance: none;
+  background: none;
+  background-color: var(--input-bg) !important;
+  color: var(--input-color) !important;
+}
+
+.input-wraper:has(.input-modifer:not(:placeholder-shown), .input-modifer:focus)
+  .input-icon {
+  color: var(--input-color);
+}
+
+.input-wraper:has(.input-disabled) .input-icon {
+  color: #6b7280;
+}
+
+.quickAccess {
+  font-size: 0.8rem;
+  padding: 8px;
+  margin: 4px;
+}
+
+.historyElements {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 4px 8px;
+  margin: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.historyContainer {
+  padding-top: 24px;
+}
+
+.chatBubbleContainer {
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.chatBubbleContainer:hover .feedbackButtonsContainer {
+  padding-left: 36px;
+  padding-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.chatBubble {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.chatBubbleCard {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.coral {
+  background-color: coral;
+}
+
+.green {
+  background-color: lightgreen;
+}
+
+.icons {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.feedbackButtonsContainer {
+  display: none;
+}
+
+.feedbackSection {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedbackArea {
+  padding: 24px 48px;
+}
+
+.feedbackCardContainer {
+  margin-top: 12px;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "1 2 3";
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedbackCard {
+  padding: 12px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.feedbackCardTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.feedbackCardRating {
+  font-size: 1rem;
+}
+
+.feedbackCardDetails {
+  font-size: 1rem;
+  padding-bottom: 4px;
+}
+
+.feedbackFilters {
+  margin: 12px 0;
+  display: flex;
+  padding: 0 48px;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+
+.themeSelector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feebackButtons {
+  padding-left: 36px;
+}
+
+.close {
+  display: flex;
+  flex-direction: row-reverse;
+  color: var(--text-color);
+}
+
+.modalTitle {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.reviewStars {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.reviewInput {
+  padding: 12px 0;
+  color: var(--text-color);
+}
+
+dialog {
+  padding: 1.5rem;
+  box-shadow: 1px 1px 15px rgb(54, 54, 54);
+  border: none !important;
+  background: var(--chat-area-bg);
+  border-radius: 20px;
+  max-width: 30vw;
+  width: 100%;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
